@@ -1,25 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>    
-  <title>UP 12 GUD — Premium Handcrafted Jaggery</title>
-    <script>
-(function () {
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent)
-           || window.innerWidth <= 768;
-  }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UP 12 GUD</title>
 
-  // Redirect only if NOT mobile
-  if (!isMobile()) {
-    window.location.replace("https://preview--gud-jaggery-shop.lovable.app/"); 
-  }
-})();
-</script>
-  </head>
-  <body>
-    <h1>Mobile Version coming up soon.</h1>
-  </body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+
+.bgm{
+background-image:
+linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+url("images/sugarcane.jpg");
+}
+
+.contact-icon{
+font-size:28px;
+color:#7b4a1e;
+margin-bottom:10px;
+display:block;
+}
+
+.bi-whatsapp{
+color:#25D366;
+}
+
+.certification-box{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:15px;
+color:#3c2516;
+}
+
+.certification-icon{
+font-size:22px;
+color:#7b4a1e;
+}
+
+.custom-navbar{
+background:#f6f2ed;
+padding:15px 0;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-img{
+height:45px;
+border-radius:50%;
+}
+
+.brand-name{
+font-family:'Playfair Display', serif;
+font-weight:700;
+font-size:20px;
+color:#3c2516;
+line-height:1;
+}
+
+.brand-tagline{
+font-size:11px;
+letter-spacing:1px;
+color:#8a7766;
+}
+
+.nav-link{
+color:#3c2516 !important;
+font-weight:500;
+margin-left:25px;
+}
+
+.nav-link:hover{
+color:#7b4a1e !important;
+}
+
+:root{
+--brown:#7b4a1e;
+--dark:#3c2516;
+--light:#f6f2ed;
+--gold:#d9a441;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--light);
+color:var(--dark);
+scroll-behavior:smooth;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+/* NAVBAR */
+.navbar{
+background:rgba(246,242,237,0.95);
+backdrop-filter:blur(8px);
+padding:18px 0;
+}
+.nav-link{
+color:var(--dark)!important;
+margin-left:25px;
+font-weight:500;
+}
+.nav-link:hover{
+color:var(--brown)!important;
+}
+
+/* HERO */
+.hero{
+height:95vh;
+background:url('hero.jpg') center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+text-align:center;
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,
+rgba(246,242,237,0.6),
+rgba(246,242,237,0.9),
+#f6f2ed 95%);
+}
+.hero-content{
+position:relative;
+z-index:2;
+}
+.hero h1{
+font-size:3.5rem;
+font-weight:700;
+}
+.hero p{
+max-width:650px;
+margin:20px auto;
+color:#6c5748;
+}
+.btn-premium{
+background:var(--brown);
+color:white;
+border:none;
+padding:12px 35px;
+border-radius:50px;
+transition:0.3s;
+}
+.btn-premium:hover{
+background:#5e3818;
+transform:translateY(-2px);
+}
+
+/* SECTION */
+.section-title{
+margin:100px 0 50px;
+text-align:center;
+}
+.section-title p{
+color:#7a6757;
+}
+
+/* PRODUCT CARD */
+.product-card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 12px 35px rgba(0,0,0,0.06);
+transition:0.4s;
+height:100%;
+}
+.product-card:hover{
+transform:translateY(-8px);
+}
+.product-img{
+height:270px;
+object-fit:cover;
+width:100%;
+}
+.product-body{
+padding:22px;
+}
+.product-title{
+font-size:20px;
+font-weight:600;
+}
+.product-desc{
+font-size:14px;
+color:#7a6757;
+}
+.price{
+font-weight:600;
+font-size:18px;
+}
+.badge-tag{
+position:absolute;
+top:18px;
+left:18px;
+background:var(--gold);
+color:white;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+letter-spacing:1px;
+}
+
+/* ABOUT */
+.about{
+padding:120px 0;
+}
+.about p{
+color:#6c5748;
+max-width:800px;
+margin:auto;
+}
+
+/* CONTACT */
+.contact{
+padding:120px 0;
+}
+.contact-box{
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer{
+background:#efe9e2;
+padding:60px 0;
+margin-top:100px;
+}
+.footer-bottom{
+text-align:center;
+margin-top:30px;
+color:#7a6757;
+font-size:14px;
+}
+
+@media(max-width:768px){
+.hero{
+height:80vh;
+}
+.hero h1{
+font-size:2.3rem;
+}
+.section-title{
+margin:70px 0 30px;
+}
+}
+
+</style>
+</head>
+<body class="bgm">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center" href="">
+      <img src="images/logo.png" alt="UP12 Gud Logo" class="logo-img me-2">
+      <div class="brand-text">
+        <div class="brand-name">UP 12 GUD</div>
+        <div class="brand-tagline">FROM THE SUGAR BOWL OF INDIA</div>
+      </div>
+    </a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="nav">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<!-- 
+<section class="hero-section">
+  <div class="hero-content container text-center">
+    <h1>Pure. Natural. Premium.</h1>
+    <p>Handcrafted jaggery from the heart of Uttar Pradesh, bringing you the finest organic sweetness — naturally rich in minerals.</p>
+    <a href="#products" class="btn btn-premium">SHOP NOW</a>
+  </div>
+</section> -->
+<section id="home" class="hero">
+<div class="container hero-content">
+<h1>Pure. Natural. Premium.</h1>
+<p>Handcrafted jaggery from the heart of Uttar Pradesh, bringing you the finest organic sweetness — naturally rich in minerals.</p>
+<a href="#products" class="btn btn-premium">SHOP NOW</a>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="container">
+<div class="section-title">
+<h2>Our Collection</h2>
+<p>Handcrafted with love, delivered with care</p>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="product-card position-relative">
+<img src="images/p1.jpg" class="product-img">
+<div class="product-body">
+<div class="product-title">Plain Jaggery</div>
+<div class="product-desc mb-3">Pure, unrefined traditional jaggery made from the finest sugarcane. Rich in minerals and natural sweetness.</div>
+<div class="price">₹249 / kg</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="product-card position-relative">
+<span class="badge-tag">POPULAR</span>
+<img src="images/p2.jpg" class="product-img">
+<div class="product-body">
+<div class="product-title">Ginger Jaggery</div>
+<div class="product-desc mb-3">A warming blend of premium jiggery infused with aromatic ginger. Perfect for immunity and digestion.</div>
+<div class="price">₹349 / kg</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="product-card position-relative">
+<img src="images/p3.jpg" class="product-img">
+<div class="product-body">
+<div class="product-title">Digestive Jaggery</div>
+<div class="product-desc mb-3">Specially crafted with digestive herbs and spices. Aids digestion naturally after every meal.</div>
+<div class="price">₹399 / kg</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="product-card position-relative">
+<span class="badge-tag">PREMIUM</span>
+<img src="images/p4.jpg" class="product-img">
+<div class="product-body">
+<div class="product-title">Dry Fruit Jaggery</div>
+<div class="product-desc mb-3">Luxurious jaggery loaded with almonds, cashews, and pistachios. A premium indulgence for health lovers.</div>
+<div class="price">₹429 / kg</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="product-card position-relative">
+<img src="images/p5.jpg" class="product-img">
+<div class="product-body">
+<div class="product-title">Elaichi Jaggery</div>
+<div class="product-desc mb-3">Delicately flavored with finest cardamom. An aromatic treat that elevates your tea and desserts.</div>
+<div class="price">₹299 / kg</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about text-center">
+<div class="container contact-box">
+<div class="section-title">
+<h2>About Us</h2>
+</div>
+<p>
+From the Sugar Bowl of India, UP 12 GUD delivers premium handcrafted jaggery made using traditional methods.
+We preserve natural minerals, authentic taste, and purity in every batch.
+</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact py-5">
+<div class="container">
+<!-- 
+<div class="section-title text-center mb-5">
+<h2>Contact Us</h2> -->
+<!-- <p>We'd love to hear from you</p> -->
+<!-- </div> -->
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+<div class="contact-box text-center">
+
+    <div class="section-title text-center mb-5">
+<h2>Contact Us</h2>
+<p>We'd love to hear from you</p>
+</div>
+
+<div class="contact-item mb-4">
+  <i class="bi bi-whatsapp contact-icon"></i>
+  <p><strong>WhatsApp</strong></p>
+  <a href="https://wa.me/918800813321" target="_blank">
+    Chat on WhatsApp
+  </a>
+</div>
+
+<div class="contact-item mb-4">
+<i class="bi bi-telephone-fill contact-icon"></i>
+<p><strong>Phone</strong></p>
+<a href="tel:8800813321">8800813321</a>
+</div>
+
+<div class="contact-item mb-4">
+<i class="bi bi-envelope-fill contact-icon"></i>
+<p><strong>Email</strong></p>
+<a href="mailto:up12gud2025@gmail.com">up12gud2025@gmail.com</a>
+</div>
+
+<div class="contact-item">
+<i class="bi bi-instagram contact-icon"></i>
+<p><strong>Instagram</strong></p>
+<a href="https://instagram.com/up12_gud" target="_blank">@up12_gud</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container contact-box">
+<div class="section-title">
+<h2>Certification</h2>
+</div>
+<div class="text-center">
+  <i class="bi bi-shield-check certification-icon"></i>
+  <div>FSSAI Licensed</div>
+  <small>Lic. No. 2272539300164</small>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container text-center">
+<div>© 2026 UP 12 GUD. All rights reserved.</div>
+<div class="footer-bottom">Trademark Registered</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-  
-
-  
